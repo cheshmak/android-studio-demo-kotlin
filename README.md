@@ -65,7 +65,7 @@ First, add the below code to your application class:
         // init Advertise
         ChesAdv.initiate(applicationContext)
         ChesAdv.enableBannerAds() // enable advertise banner
-        ChesAdv.setTestMode(true) // enable test mode
+
 ```
 Second, add the banner view to your xml file where you want to show ads
 
@@ -87,7 +87,7 @@ CheshAdv.disableBannerAds()
 Use the following code to enable or disabling the test mode. 
 
 ```kotlin 
-CheshAdv.setTestMode(true)
+        ChesAdv.setTestMode(true) // enable test mode
 ```
 # 6. Push notification Handling
 
