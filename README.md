@@ -49,12 +49,15 @@ compile 'com.google.android.gms:play-services-gcm:10.0.1'
 When you initialize the SDK, you make it ready for use in your app. It sets initial values and performs other setup tasks. This is required for the features of the Cheshmak SDK to work.
 First, create an application class (look [here](https://stackoverflow.com/questions/12834379/extending-android-application-class) if you need assistance)
 Next, paste the following code snippet into your app's Application class ```onCreate()``` method. 
+
 ```kotlin
         Cheshmak.with(this)
         // Replace <YOUR_APP_KEY> below with the real APP KEY that has been provided in the panel
         Cheshmak.initTracker("/j0DtEit12p0PLEsqzP+Lg==")
         Cheshmak.isTestDevice(true)// Device is set for test
-        ```
+        
+```
+        
 # 4. Advertisement Display 
 First, add the below code to your application class: 
 
@@ -74,6 +77,7 @@ Second, add the banner view to your xml file where you want to show ads
 
 ```
 for disable showing banner use bellow line code. 
+
 ```kotlin
 CheshAdv.disableBannerAds()
 ```
@@ -171,7 +175,9 @@ Cheshmak.deleteTag("premiumUser")
         tags.add("premiumUser")
         tags.add("tagA")
         tags.add("tagB")
-        Cheshmak.deleteTags(tags)```
+        Cheshmak.deleteTags(tags)
+```
+
 Remove all tages:
 
 
@@ -194,7 +200,7 @@ Remove all tages:
 
 send exception with high priority: 
 
-```java 
+```kotlin 
 ​
     try {
       //Do some buggy things
@@ -206,7 +212,7 @@ send exception with high priority:
 
 Send exception without a title:
 
-```java 
+```kotlin 
 ​
 try{
  //Do some buggy things​
