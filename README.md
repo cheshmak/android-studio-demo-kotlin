@@ -40,7 +40,6 @@ repositories {
 Next, add the below dependencies to build.gradle file:
 
 ```java
-
 compile 'me.cheshmak:analytics:2.0.5'
 compile 'com.google.android.gms:play-services-gcm:10.0.1'
 ```
@@ -54,8 +53,8 @@ Next, paste the following code snippet into your app's Application class ```onCr
         Cheshmak.with(this)
         // Replace <YOUR_APP_KEY> below with the real APP KEY that has been provided in the panel
         Cheshmak.initTracker("/j0DtEit12p0PLEsqzP+Lg==")
-        Cheshmak.isTestDevice(true)// Device is set for test```
-
+        Cheshmak.isTestDevice(true)// Device is set for test
+        ```
 # 4. Advertisement Display 
 First, add the below code to your application class: 
 
