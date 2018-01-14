@@ -40,7 +40,7 @@ repositories {
 Next, add the below dependencies to build.gradle file:
 
 ```java
-compile 'me.cheshmak:analytics:2.0.5'
+compile 'me.cheshmak:analytics:2.+'
 compile 'com.google.android.gms:play-services-gcm:10.0.1'
 ```
  
@@ -54,7 +54,6 @@ Next, paste the following code snippet into your app's Application class ```onCr
         Cheshmak.with(this)
         // Replace <YOUR_APP_KEY> below with the real APP KEY that has been provided in the panel
         Cheshmak.initTracker("/j0DtEit12p0PLEsqzP+Lg==")
-        Cheshmak.isTestDevice(true)// Device is set for test
         
 ```
         
@@ -63,8 +62,8 @@ First, add the below code to your application class:
 
 ```kotlin 
         // init Advertise
-        ChesAdv.initiate(applicationContext)
-        ChesAdv.enableBannerAds() // enable advertise banner
+        CheshmakAds.initiate(applicationContext)
+        CheshmakAds.enableBannerAds() // enable advertise banner
 
 ```
 Second, add the banner view to your xml file where you want to show ads
@@ -79,17 +78,10 @@ Second, add the banner view to your xml file where you want to show ads
 for disable showing banner use bellow line code. 
 
 ```kotlin
-CheshAdv.disableBannerAds()
+CheshmakAds.disableBannerAds()
 ```
 
-# 5. Test Mode 
-
-Use the following code to enable or disabling the test mode. 
-
-```kotlin 
-        ChesAdv.setTestMode(true) // enable test mode
-```
-# 6. Push notification Handling
+# 5. Push notification Handling
 
 To open an activity once a user clicks on a push notification, insert the following snippet into your manifest file: 
 
@@ -100,7 +92,7 @@ android:label="your_activity_name">​
 ​<meta-data android:name="cheshmakPush" android:value="openActivityOnPush"/>​
 ​</activity>
 ```
-# 7. Receiving Data through Push Notification
+# 6. Receiving Data through Push Notification
 
 for receive data from push you can get data in the following way. 
 
@@ -119,7 +111,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
  
 ```
 
-# 8. Using Push to Open Services 
+# 7. Using Push to Open Services 
 You may use push notifications to send instructions to the device to start a service. Please see below as an example:
 
 ```xml 
@@ -148,7 +140,7 @@ override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
  
 ```
 
-# 9. Tagging
+# 8. Tagging
 You may tag a user by using the following code: 
 
 ```kotlin 
@@ -185,7 +177,7 @@ Remove all tages:
 ​Cheshmak.deleteAllTags()
 ```
 
-# 10. Exception Handling:
+# 9. Exception Handling:
 
  send exceptions:
  
