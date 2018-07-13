@@ -1,7 +1,7 @@
 package me.cheshmak.sdk.example.kotlin
 
 import android.app.Application
-import me.cheshmak.android.sdk.advertise.ChesAdv
+import me.cheshmak.android.sdk.advertise.CheshmakAds
 import me.cheshmak.android.sdk.core.Cheshmak
 
 /**
@@ -20,9 +20,9 @@ class Application : Application() {
 
 
         // init Advertise
-        ChesAdv.initiate(applicationContext)
-        ChesAdv.enableBannerAds() // enable advertise banner
-        ChesAdv.setTestMode(true) // enable test mode
+        CheshmakAds.initiate(applicationContext)
+        CheshmakAds.setAdsEnabled(true) // enable advertise banner
+        CheshmakAds.setTestMode(true) // enable test mode
 
         //ChesAdv.disableBannerAds() //for disable banner use this if you want
     }
