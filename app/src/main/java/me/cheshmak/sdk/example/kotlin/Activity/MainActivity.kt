@@ -2,8 +2,10 @@ package me.cheshmak.sdk.example.kotlin
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.widget.Toast
 import me.cheshmak.android.sdk.core.Cheshmak
+import me.cheshmak.android.sdk.core.network.SinglePushResponseListener
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         Cheshmak.sendTags(tagList)
 
 
-
         val tags = ArrayList<String>()
         tags.add("premiumUser")
         tags.add("tagA")
@@ -30,8 +31,29 @@ class MainActivity : AppCompatActivity() {
         Cheshmak.deleteTags(tags)
 
 
+    }
 
+    public fun getCheshmakID(view:View) {
+        Cheshmak.getSinglePushUniqueId(applicationContext, object : SinglePushResponseListener {
+            override fun onUniqueIdReceived(uniqueId: String) {
 
+                if (isFinishing) {
+                    return
+                }
+
+                Toast.makeText(this@MainActivity, "Unique id is $uniqueId", Toast.LENGTH_SHORT).show()
+            }
+
+            override fun onError(throwable: Throwable) {
+
+                if (isFinishing) {
+                    return
+                }
+
+                Toast.makeText(this@MainActivity, "error happened, see logCat", Toast.LENGTH_SHORT).show()
+                throwable.printStackTrace()
+            }
+        })
     }
 
     private fun receiveCheshmakPush() {

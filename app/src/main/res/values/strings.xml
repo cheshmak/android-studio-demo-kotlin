@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Android-Studio-Demo-Kotlin</string>
+    <string name="get_uniq_id">دریافت شناسه یکتای چشمک</string>
 </resources>
