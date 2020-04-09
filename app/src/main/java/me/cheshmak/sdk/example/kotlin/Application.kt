@@ -16,15 +16,7 @@ class Application : Application() {
         Cheshmak.with(this)
         // Replace <YOUR_APP_KEY> below with the real APP KEY that has been provided in the panel
         Cheshmak.initTracker("/j0DtEit12p0PLEsqzP+Lg==")
-        Cheshmak.isTestDevice(true)// Device is set for test
 
-
-        // init Advertise
-        CheshmakAds.initiate(applicationContext)
-        CheshmakAds.setAdsEnabled(true) // enable advertise banner
-        CheshmakAds.setTestMode(true) // enable test mode
-
-        //ChesAdv.disableBannerAds() //for disable banner use this if you want
     }
 
 }
